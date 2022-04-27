@@ -1,5 +1,6 @@
 
 import { Component } from '@angular/core';
+import { Service1Service } from './dependency-injection/services/service1.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'demo-app';
 
-  constructor() {
-    console.log(window);
+  constructor(private _service1: Service1Service) {
+    console.log(window, _service1);
   }
 }
 
