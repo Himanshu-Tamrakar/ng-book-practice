@@ -13,6 +13,10 @@ import { Service2Service } from './dependency-injection/services/service2.servic
 import { AnalyticDemoModule } from './dependency-injection/analytic-demo/analytic-demo.module';
 import { SimpleHttpComponent } from './http/simple-http/simple-http.component';
 import { HttpClientModule } from '@angular/common/http';
+import { youTubeSearchInjectables } from './http/you-tube-search/you-tube-search-injectables';
+import { SearchBoxComponent } from './http/you-tube-search/search-box.component';
+import { SearchResultComponent } from './http/you-tube-search/search-result.component';
+import { SearchSearchComponent } from './http/you-tube-search/search-search.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     DemoSkuFormBuilderWithCustomValidatorComponent,
     ManualInjectorComponent,
     SimpleHttpComponent,
+    SearchBoxComponent,
+    SearchResultComponent,
+    SearchSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     Service1Service, 
     Service2Service,
-    {provide: "APP_URL", useValue: "accounts.vahanacloud.com"}
+    {provide: "APP_URL", useValue: "accounts.vahanacloud.com"},
+    youTubeSearchInjectables
   ],
   bootstrap: [AppComponent]
 })
