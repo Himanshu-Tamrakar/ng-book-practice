@@ -17,6 +17,22 @@ import { youTubeSearchInjectables } from './http/you-tube-search/you-tube-search
 import { SearchBoxComponent } from './http/you-tube-search/search-box.component';
 import { SearchResultComponent } from './http/you-tube-search/search-result.component';
 import { SearchSearchComponent } from './http/you-tube-search/search-search.component';
+import { SearchComponent } from './music-app/spotify/search/search.component';
+import { RouterModule, Routes } from '@angular/router';
+import { SpotifyService, SPOTIFY_PROVIDERS } from './music-app/spotify/spotify.service';
+import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ArtistsComponent } from './music-app/spotify/artists/artists.component';
+import { TracksComponent } from './music-app/spotify/tracks/tracks.component';
+import { AlbumsComponent } from './music-app/spotify/albums/albums.component';
+
+
+const routes: Routes = [
+  { path: '', redirectTo: 'search', pathMatch: 'full' },
+  { path: 'search', component: SearchComponent },
+  { path: 'artists/:id', component: ArtistsComponent },
+  { path: 'tracks/:id', component: TracksComponent },
+  { path: 'albums/:id', component: AlbumsComponent },
+];
 
 @NgModule({
   declarations: [
@@ -30,19 +46,27 @@ import { SearchSearchComponent } from './http/you-tube-search/search-search.comp
     SearchBoxComponent,
     SearchResultComponent,
     SearchSearchComponent,
+    SearchComponent,
+    ArtistsComponent,
+    TracksComponent,
+    AlbumsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AnalyticDemoModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     Service1Service, 
     Service2Service,
     {provide: "APP_URL", useValue: "accounts.vahanacloud.com"},
-    youTubeSearchInjectables
+    youTubeSearchInjectables,
+    SPOTIFY_PROVIDERS,
+    {provide: APP_BASE_HREF, useValue: '/'},
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })
