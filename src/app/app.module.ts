@@ -29,6 +29,12 @@ import { InlineStyleComponent } from './advanced-components/styling/inline-style
 import { ExternalStyleComponent } from './advanced-components/styling/external-style/external-style.component';
 import { NativeEncapsulationComponent } from './advanced-components/styling/native-encapsulation/native-encapsulation.component';
 import { NoEncapsulationComponent } from './advanced-components/styling/no-encapsulation/no-encapsulation.component';
+import { MessageComponent } from './advanced-components/content-projection/message.component';
+import { 
+  ContentProjectionDemoComponent
+} from './advanced-components/content-projection/content-projection-demo.component'
+
+
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
   { path: 'search', component: SearchComponent },
@@ -57,6 +63,8 @@ const routes: Routes = [
     NoEncapsulationComponent,
     ExternalStyleComponent,
     NativeEncapsulationComponent,
+    MessageComponent,
+    ContentProjectionDemoComponent
   ],
   imports: [
     BrowserModule,
