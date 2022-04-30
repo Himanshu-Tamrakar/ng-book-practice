@@ -24,8 +24,11 @@ import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy } from '@angular/
 import { ArtistsComponent } from './music-app/spotify/artists/artists.component';
 import { TracksComponent } from './music-app/spotify/tracks/tracks.component';
 import { AlbumsComponent } from './music-app/spotify/albums/albums.component';
-
-
+import { messagesServiceInjectables } from './chat-rxjs/message/messages.service';
+import { InlineStyleComponent } from './advanced-components/styling/inline-style/inline-style.component';
+import { ExternalStyleComponent } from './advanced-components/styling/external-style/external-style.component';
+import { NativeEncapsulationComponent } from './advanced-components/styling/native-encapsulation/native-encapsulation.component';
+import { NoEncapsulationComponent } from './advanced-components/styling/no-encapsulation/no-encapsulation.component';
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
   { path: 'search', component: SearchComponent },
@@ -50,6 +53,10 @@ const routes: Routes = [
     ArtistsComponent,
     TracksComponent,
     AlbumsComponent,
+    InlineStyleComponent,
+    NoEncapsulationComponent,
+    ExternalStyleComponent,
+    NativeEncapsulationComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +73,8 @@ const routes: Routes = [
     youTubeSearchInjectables,
     SPOTIFY_PROVIDERS,
     {provide: APP_BASE_HREF, useValue: '/'},
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+    messagesServiceInjectables
   ],
   bootstrap: [AppComponent]
 })
