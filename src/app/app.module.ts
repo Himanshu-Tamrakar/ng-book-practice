@@ -33,6 +33,7 @@ import { MessageComponent } from './advanced-components/content-projection/messa
 import { 
   ContentProjectionDemoComponent
 } from './advanced-components/content-projection/content-projection-demo.component'
+import { TabModule } from './advanced-components/tab/tab.module';
 
 
 const routes: Routes = [
@@ -72,7 +73,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     AnalyticDemoModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    TabModule
   ],
   providers: [
     Service1Service, 
