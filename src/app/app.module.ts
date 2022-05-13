@@ -34,6 +34,8 @@ import {
   ContentProjectionDemoComponent
 } from './advanced-components/content-projection/content-projection-demo.component'
 import { TabModule } from './advanced-components/tab/tab.module';
+import { LifecycleModule } from './advanced-components/lifecycle/lifecycle.module';
+import { TemplatesModule } from './advanced-components/templates/templates.module';
 
 
 const routes: Routes = [
@@ -65,7 +67,7 @@ const routes: Routes = [
     ExternalStyleComponent,
     NativeEncapsulationComponent,
     MessageComponent,
-    ContentProjectionDemoComponent
+    ContentProjectionDemoComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,9 @@ const routes: Routes = [
     AnalyticDemoModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    TabModule
+    TabModule,
+    LifecycleModule, 
+    TemplatesModule
   ],
   providers: [
     Service1Service, 
