@@ -36,6 +36,10 @@ import {
 import { TabModule } from './advanced-components/tab/tab.module';
 import { LifecycleModule } from './advanced-components/lifecycle/lifecycle.module';
 import { TemplatesModule } from './advanced-components/templates/templates.module';
+import { ExampleZippyComponent, ZippyContentDirective } from './advanced-components/content-projection/conditional-content-projection/example-zippy.component';
+import { ConditionalContentProjectionComponent } from './advanced-components/content-projection/conditional-content-projection/conditional-content-projection-demo.component';
+import { AsyncMessageComponent } from './pipe/async-message/async-message.component';
+import { DemoModule } from './testing/demo';
 
 
 const routes: Routes = [
@@ -68,6 +72,10 @@ const routes: Routes = [
     NativeEncapsulationComponent,
     MessageComponent,
     ContentProjectionDemoComponent,
+    ExampleZippyComponent,
+    ZippyContentDirective,
+    ConditionalContentProjectionComponent,
+    AsyncMessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +86,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     TabModule,
     LifecycleModule, 
-    TemplatesModule
+    TemplatesModule,
+    DemoModule
   ],
   providers: [
     Service1Service, 

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SpotifyService } from '../spotify.service';
@@ -25,6 +26,16 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    // this.http
+    //     .request("GET", 'https://application-management-dev.vahanacloud.com/backend/earth/asset-manager/api/v1/asset/export', {})
+    //     .subscribe(res => {
+    //       debugger
+    //       console.log(res);
+    //     })
+        
+
+
   }
 
   search() {
