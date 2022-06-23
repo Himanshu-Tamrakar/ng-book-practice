@@ -10,7 +10,6 @@ export class FakeValueService extends ValueService {
 }
 
 describe('demo (no test bed)', ()=> {
-
     // Straight Jasmine testing without Angular's testing support
     describe('ValueService', () => {
 
@@ -62,11 +61,13 @@ describe('demo (no test bed)', ()=> {
         });
 
         it('#getValue should return faked value from a fakeService', () => {
+            // Faking Class
             masterService = new MasterService(new FakeValueService());
             expect(masterService.getValue()).toBe('faked service value');
         });
 
         it('#getValue should return faked value from a fake object', () => {
+            // stub
             const fakeObj = {
                 getValue: () => 'fake value'
             }
@@ -76,7 +77,9 @@ describe('demo (no test bed)', ()=> {
         });
 
         it('#getValue should return stubbed value from a spy', () =>{
+            // spy
             const valueServiceSpy = jasmine.createSpyObj('valueService', ['getValue']);
+
             const stubValue = 'stub value';
             valueServiceSpy.getValue.and.returnValue(stubValue);
 

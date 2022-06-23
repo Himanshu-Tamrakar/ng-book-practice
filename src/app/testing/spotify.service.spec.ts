@@ -12,7 +12,6 @@ describe('Testing HTTP call #Spotify Service', () => {
         });
 
         httpTestingController = TestBed.inject(HttpTestingController);
-
     })
 
     it('#search should call spotify service', 

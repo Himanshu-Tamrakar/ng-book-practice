@@ -12,8 +12,8 @@ export class SpotifyService {
   }
 
   getAccessToken(): void {
-    var client_id = '0d3dbc657bfd44f5ab862ac2cc29c6bf';
-    var client_secret = 'aae20cb8992d4309965dc117f8bbb7b5';
+    var client_id = '0d3dbc657bfd44f5ab862ac2cc29c6bfqw';
+    var client_secret = 'aae20cb8992d4309965dc117f8bbb7b5qw';
 
   
     const options = {

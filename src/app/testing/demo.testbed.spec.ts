@@ -79,14 +79,6 @@ describe('demo (with TestBed):', () => {
             expect(promiseVal).toBe('promise value');
         }))
 
-        // Its a bug
-        // it('should allow the use of fakeAsync', waitForAsync(() => {
-        //     let objDelayedVal:string = '';
-        //     valueService.getObservableDelayValue().subscribe(data => objDelayedVal = data);
-        //     tick();
-        //     expect(objDelayedVal).toBe('observable delay value');
-        // }))
-
     })
 
     describe('MasterService with TestBed', () => {
